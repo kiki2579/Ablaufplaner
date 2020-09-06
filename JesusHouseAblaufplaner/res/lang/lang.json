@@ -1,0 +1,34 @@
+{
+  "lang": "Deutsch",
+  "English": {
+    "Save": {
+      "Empty": {
+        "msg": "The table is empty! Please fill the table.\nFor Help open the Help Menu or press 'F1'.",
+        "caption": "Empty table!"
+      },
+      "NotSaved": {
+        "msg": "Your table isn't saved. Do you want to save it?",
+        "caption": "Unsaved Changes"
+      }
+    },
+    "Form2": {
+      "endOfTable": "You have reached the ende of your presentation!"
+    }
+  },
+  "Deutsch": {
+    "Speichern": {
+      "Empty": {
+        "msg": "Den Ablauf ist lerr! Bitte fuellen Sie den Ablauf aus bevor Sie ihn speichern.\nBei Problemen oeffnen Sie das Hilfemenu oder druecken Sie 'F1'",
+        "caption": "Leerer Ablauf!"
+      },
+      "NotSaved": {
+        "msg": "Ihr Ablauf ist nicht gespeichert! Moechsten Sie ihn speichern?",
+        "caption": "Ungespeicherte Aenderungen"
+      }
+    },
+    "Form2": {
+      "endOfTable": "Sie haben das Ende des Ablaufs erreicht!"
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\bin\Release\JesusHouseAblaufplaner.exe.config
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\bin\Release\JesusHouseAblaufplaner.exe
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\bin\Release\JesusHouseAblaufplaner.pdb
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.dll
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.xml
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.Form1.resources
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.Form2.resources
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.Form3.resources
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.Properties.Resources.resources
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.csproj.GenerateResource.cache
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.csproj.CoreCompileInputs.cache
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.csproj.CopyComplete
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.exe
+C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Release\JesusHouseAblaufplaner.pdb
