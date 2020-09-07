@@ -31,3 +31,4 @@ C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAbl
 C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.dll
 C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.xml
 C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csprojAssemblyReference.cache

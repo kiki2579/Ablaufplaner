@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -519,7 +520,22 @@ namespace JesusHouseAblaufplaner
 
         private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            printDialog1.AllowPrintToFile = true;
+            printDialog1.Document = printDocument1;
 
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            using (Bitmap printImage = new Bitmap(table.Width, table.Height))
+            {
+                table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                e.Graphics.DrawImage(printImage, 0, 0);
+            }
         }
 
         private void hilfeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -545,6 +561,7 @@ namespace JesusHouseAblaufplaner
             form3.Activate();
             form3.Enabled = true;
         }
+
         
     }
 }
