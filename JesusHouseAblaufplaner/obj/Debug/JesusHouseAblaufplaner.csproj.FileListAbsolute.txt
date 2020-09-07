@@ -17,3 +17,17 @@ C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\
 C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete
 C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.exe
 C:\Users\Felix\source\repos\Jesus_House_Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.pdb
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form1.resources
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form2.resources
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form3.resources
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.Properties.Resources.resources
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.GenerateResource.cache
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CoreCompileInputs.cache
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.exe
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.pdb
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.exe.config
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.exe
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.pdb
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.dll
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.xml
+C:\Users\Felix\Desktop\Programmieren\Git\Ablaufplaner\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete

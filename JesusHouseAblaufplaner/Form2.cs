@@ -294,7 +294,7 @@ namespace JesusHouseAblaufplaner
             {
                 Control label = tableLayoutPanel1.Controls.Find("next" + Convert.ToString(i), false).First() as Label;
                 label.Font = new Font("Arial", this.Size.Width / 50);
-            }*/-
+            }*/
         }
     }
 }
