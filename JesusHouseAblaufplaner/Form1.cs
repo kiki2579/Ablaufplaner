@@ -518,6 +518,7 @@ namespace JesusHouseAblaufplaner
             this.Close();
         }
 
+        #region Drucken
         private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -534,9 +535,15 @@ namespace JesusHouseAblaufplaner
             using (Bitmap printImage = new Bitmap(table.Width, table.Height))
             {
                 table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                e.Graphics.DrawImage(printImage, 0, panel1.Height);
+            }
+            using (Bitmap printImage = new Bitmap(panel1.Width, panel1.Height))
+            {
+                panel1.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
                 e.Graphics.DrawImage(printImage, 0, 0);
             }
         }
+        #endregion
 
         private void hilfeToolStripMenuItem_Click(object sender, EventArgs e)
         {

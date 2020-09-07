@@ -91,7 +91,7 @@
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
             this.öffnenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
@@ -99,14 +99,15 @@
             // 
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
             this.speichernToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.speichernToolStripMenuItem.Text = "Speichern";
             this.speichernToolStripMenuItem.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
             // 
             // druckenToolStripMenuItem
             // 
             this.druckenToolStripMenuItem.Name = "druckenToolStripMenuItem";
-            this.druckenToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.druckenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.druckenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.druckenToolStripMenuItem.Text = "Drucken";
             this.druckenToolStripMenuItem.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
             // 
@@ -117,7 +118,7 @@
             this.spracheToolStripMenuItem,
             this.hilfeToolStripMenuItem});
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             // 
             // hotkeysToolStripMenuItem
@@ -145,7 +146,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
