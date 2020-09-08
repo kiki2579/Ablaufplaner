@@ -520,6 +520,7 @@ namespace JesusHouseAblaufplaner
 
         #region Drucken
 
+        int count = 0;
         private void scrollDown()
         {
             Point current = table.AutoScrollPosition;
@@ -528,13 +529,22 @@ namespace JesusHouseAblaufplaner
         }
         private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            printDialog1.AllowPrintToFile = true;
+
+            //Scroll to the top
+            //count = 0;
+            printDialog1.AllowPrintToFile = true;            
             printDialog1.Document = printDocument1;
 
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
-                printDocument1.Print();
+                try
+                {
+                    printDocument1.Print();
+                }
+                catch (Win32Exception)
+                {
+
+                }
             }
         }
 
@@ -554,22 +564,32 @@ namespace JesusHouseAblaufplaner
             //        else e.Graphics.DrawImage(printImage, 0, printImage.Width * i);                    
             //    }
             //}
-            using (Bitmap printImage = new Bitmap(table.Width-20, table.Height-12))// um die letze sichtbare reihe genau abzuschneiden
+
+            if (count == 0)
             {
-                table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
-                e.Graphics.DrawImage(printImage, 0, panel1.Height);
+                using (Bitmap printImage = new Bitmap(table.Width - 20, table.Height - 12))// um die letze sichtbare reihe genau abzuschneiden
+                {
+                    table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                    e.Graphics.DrawImage(printImage, 0, panel1.Height);
+                }
+                using (Bitmap printImage = new Bitmap(panel1.Width - 20, panel1.Height))
+                {
+                    panel1.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                    e.Graphics.DrawImage(printImage, 0, 0);
+                }
             }
-            scrollDown();
-            using (Bitmap printImage = new Bitmap(table.Width-20, table.Height-12))
+            for (int i = 1; i < 3; i++)
             {
-                table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
-                e.Graphics.DrawImage(printImage, 0, table.Height+24);
+                scrollDown();
+                using (Bitmap printImage = new Bitmap(table.Width - 20, table.Height - 12))
+                {
+                    table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                    e.Graphics.DrawImage(printImage, 0, (table.Height + 24)*i);
+                } 
             }
-            using (Bitmap printImage = new Bitmap(panel1.Width-20, panel1.Height))
-            {
-                panel1.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
-                e.Graphics.DrawImage(printImage, 0, 0);
-            }
+            count++;
+            Console.WriteLine(table_lines / 21 + " | " + count);
+            e.HasMorePages = count < table_lines/21;
         }
         #endregion
 
