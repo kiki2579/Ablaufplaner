@@ -519,6 +519,13 @@ namespace JesusHouseAblaufplaner
         }
 
         #region Drucken
+
+        private void scrollDown()
+        {
+            Point current = table.AutoScrollPosition;
+            Point scrolled = new Point(current.X, -current.Y + 384);
+            table.AutoScrollPosition = scrolled;
+        }
         private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -530,14 +537,35 @@ namespace JesusHouseAblaufplaner
                 printDocument1.Print();
             }
         }
+
+        public static Bitmap resizeImage(Bitmap imgToResize, Size size)
+        {
+            return (Bitmap)(new Bitmap(imgToResize, size));
+        }
+
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            using (Bitmap printImage = new Bitmap(table.Width, table.Height))
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    using (Bitmap printImage = new Bitmap(table.Width, table.Height))
+            //    {
+            //        table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+            //        if (i == 0) e.Graphics.DrawImage(printImage, 0, panel1.Width);
+            //        else e.Graphics.DrawImage(printImage, 0, printImage.Width * i);                    
+            //    }
+            //}
+            using (Bitmap printImage = new Bitmap(table.Width-20, table.Height-12))// um die letze sichtbare reihe genau abzuschneiden
             {
                 table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
                 e.Graphics.DrawImage(printImage, 0, panel1.Height);
             }
-            using (Bitmap printImage = new Bitmap(panel1.Width, panel1.Height))
+            scrollDown();
+            using (Bitmap printImage = new Bitmap(table.Width-20, table.Height-12))
+            {
+                table.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
+                e.Graphics.DrawImage(printImage, 0, table.Height+24);
+            }
+            using (Bitmap printImage = new Bitmap(panel1.Width-20, panel1.Height))
             {
                 panel1.DrawToBitmap(printImage, new Rectangle(0, 0, printImage.Width, printImage.Height));
                 e.Graphics.DrawImage(printImage, 0, 0);
