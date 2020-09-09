@@ -267,7 +267,16 @@ namespace JesusHouseAblaufplaner
                 else if (result == DialogResult.No) openFile();
 
             }
-            else openFile();
+            else
+            {
+                statusStrip1.Visible = true;
+                toolStripProgressBar1.Minimum = 0;
+                toolStripProgressBar1.Maximum = table_lines;
+                toolStripProgressBar1.Value = 0;
+                toolStripProgressBar1.Step = 1;
+                openFile();
+                statusStrip1.Visible = false;
+            }
         }
 
         public void openFile()
@@ -307,9 +316,17 @@ namespace JesusHouseAblaufplaner
                                 textBox.KeyDown -= TextBoxesKeyPressed;
                                 textBox.KeyPress -= TextBoxesKeyPressEvent;
                                 table.Controls.RemoveByKey("textBox" + Convert.ToString(textboxname + i));
-                            } 
-                        } while (textboxname > 0);                        
+                            }
+                            toolStripProgressBar1.PerformStep();
+                        } while (textboxname > 0);
 
+                        using (StreamReader sr = new StreamReader(file_name))
+                        {
+                            int c = 0;
+                            while (sr.ReadLine() != null) { c++; }
+                            toolStripProgressBar1.Maximum = c;
+                            toolStripProgressBar1.Value = 1;
+                        }
                         do
                         {
                             String line = rd.ReadLine();
@@ -344,7 +361,8 @@ namespace JesusHouseAblaufplaner
                                 controls.Add(textBox);
                             }
                             textboxname += 4;
-                            table_lines += 1;                            
+                            table_lines += 1;
+                            toolStripProgressBar1.PerformStep();
                         } while (!rd.EndOfStream);                    
                     }
                 }
