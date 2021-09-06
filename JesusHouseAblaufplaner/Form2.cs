@@ -121,7 +121,7 @@ namespace JesusHouseAblaufplaner
                 label.Name = "next" + Convert.ToString(i);
                 label.Dock = DockStyle.Fill;
                 label.TextAlign = ContentAlignment.MiddleCenter;
-                label.Text = $"{table[prespoint + 1 + i][1]}\n{table[prespoint + 1 + i][2]}\nUm:{table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
+                label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
                 label.Font = new Font("Arial", 11);
                 Console.WriteLine(label.Text);
                 TableLayoutControlCollection controls = tableLayoutPanel1.Controls;
@@ -174,7 +174,7 @@ namespace JesusHouseAblaufplaner
                 label.Name = "next" + Convert.ToString(i - 1);
                 label.Dock = DockStyle.Fill;
                 label.TextAlign = ContentAlignment.MiddleCenter;
-                if (table[prespoint + i][1] != null) label.Text = $"{table[prespoint + i][1]}\n{table[prespoint + i][2]}\nUm:{table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
+                if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
                 label.Font = new Font("Arial", 11);
                 Console.WriteLine(label.Text);
                 TableLayoutControlCollection controls = tableLayoutPanel1.Controls;
@@ -278,13 +278,14 @@ namespace JesusHouseAblaufplaner
             timer2.Enabled = false;
         }
 
+
         private void Form2_SizeChanged(object sender, EventArgs e)
         {
             if (this.WindowState.Equals(FormWindowState.Normal))
             {
                 //label1.TextAlign = ContentAlignment.BottomRight;
                 this.FormBorderStyle = FormBorderStyle.Sizable;
-                label1.TextAlign = ContentAlignment.TopCenter;
+                //label1.TextAlign = ContentAlignment.TopCenter;
             }
             label1.Font = new Font("Microsoft Sans Serif", this.Size.Width / 40, FontStyle.Underline);
             label2.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30, FontStyle.Underline);
