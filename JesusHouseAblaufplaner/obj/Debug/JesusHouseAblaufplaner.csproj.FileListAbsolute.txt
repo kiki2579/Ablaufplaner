@@ -46,3 +46,18 @@ C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusH
 C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete
 C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.exe
 C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.pdb
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.exe.config
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.exe
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Ablaufplaner.pdb
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.dll
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\bin\Release\Newtonsoft.Json.xml
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.AssemblyReference.cache
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form1.resources
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form2.resources
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.Form3.resources
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.Properties.Resources.resources
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.GenerateResource.cache
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CoreCompileInputs.cache
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.exe
+C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.pdb
