@@ -472,16 +472,24 @@ namespace JesusHouseAblaufplaner
                         } while (!rd.EndOfStream);
                     }
                     Console.WriteLine("Test2: " + content);
-                    for (int i = 0; i < content.Length; i++)
+                    for (int i = 0; i <= content.Length; i++)
                     {
-                        Console.WriteLine("Test: " + content[i][0]);
-                        Char[] savestate = new Char[5];
-                        for (int j = 0; j < content[i][0].Length; j++)
+                        try
                         {
-                            Console.WriteLine(content[i][0][j]);
-                            savestate[j] = content[i][0][j];
+                            Console.WriteLine("Test: " + content[i][0].Length);
+                            Char[] savestate = new Char[5];
+                            for (int j = 0; j < content[i][0].Length; j++)
+                            {
+                                Console.WriteLine(content[i][0][j]);
+                                savestate[j] = content[i][0][j];
+                            }
+                            content[i][0] = savestate[0].ToString() + savestate[1].ToString() + ':' + savestate[2].ToString() + savestate[3].ToString();
                         }
-                        content[i][0] = savestate[0].ToString() + savestate[1].ToString() + ':' + savestate[2].ToString() + savestate[3].ToString();
+                        catch
+                        {
+
+                        }
+                        
                 
                     }
 
