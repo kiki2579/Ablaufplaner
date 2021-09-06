@@ -48,7 +48,9 @@ namespace JesusHouseAblaufplaner
             //Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
             if (!hoch && timeSpan.TotalSeconds > 60)
                 label5.ForeColor = Color.Green;
-            else if (hoch || timeSpan.TotalSeconds <= overtime_indikator)
+            else if (!hoch && timeSpan.TotalSeconds < 60)
+                label5.ForeColor = Color.DarkOrange;
+            if (hoch || timeSpan.TotalSeconds <= overtime_indikator)
                 label5.ForeColor = Color.Red;
             if (timeSpan.TotalSeconds < 1) hoch = true;
             timeBefore = timeSpan.TotalSeconds;

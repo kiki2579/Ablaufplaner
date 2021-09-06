@@ -424,6 +424,10 @@ namespace JesusHouseAblaufplaner
         private void startenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[][] content = new String[table.RowCount][];
+            DateTime date;
+            TimeSpan timeSpan;
+            DateTime startDate;
+
             for (int i = 0; i < content.GetLength(0); i++)
             {
                 content[i] = new String[4];
