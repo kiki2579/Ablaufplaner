@@ -286,8 +286,8 @@ namespace JesusHouseAblaufplaner
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 label1.TextAlign = ContentAlignment.TopCenter;
             }
-            label1.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30 -8);
-            label2.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30);
+            label1.Font = new Font("Microsoft Sans Serif", this.Size.Width / 40, FontStyle.Underline);
+            label2.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30, FontStyle.Underline);
             label3.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30);
             label4.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30, FontStyle.Bold);
             label5.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30 + 10, FontStyle.Bold);
