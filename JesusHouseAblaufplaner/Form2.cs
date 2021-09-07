@@ -92,7 +92,7 @@ namespace JesusHouseAblaufplaner
                 Console.WriteLine(ex.Message);
             }
 
-            panel4.BackColor = Color.FromArgb(30, Color.White);
+            panel4.BackColor = Color.FromArgb(30, Color.Black);
 
             Console.WriteLine("Test§: " + lines);
             //TableLayoutRowStyleCollection styles = tableLayoutPanel1.RowStyles;
@@ -196,9 +196,9 @@ namespace JesusHouseAblaufplaner
             {
                 //Wenn nichts wéiteres geplant ist!;
                 label5.Text = language.Deutsch.Form2.endOfTable;
-                label5.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30 - 10, FontStyle.Bold);
+                label5.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30, FontStyle.Bold);
                 label4.Text = table[prespoint][2];
-                label5.ForeColor = Color.Black;
+                label5.ForeColor = Color.White;
                 timer1.Enabled = false;
                 return;
             }
@@ -278,6 +278,7 @@ namespace JesusHouseAblaufplaner
             timer2.Enabled = false;
         }
 
+       
 
         private void Form2_SizeChanged(object sender, EventArgs e)
         {
