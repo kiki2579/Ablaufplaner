@@ -13,22 +13,29 @@
     },
     "Form2": {
       "endOfTable": "You have reached the end of your presentation!"
+    },
+    "delay": {
+      "msg": "You have startet your presentation later than planned´. Do you want to shift you timeplan?",
+      "caption": "Time delay detected!"
     }
   },
-  "Deutsch": {
-    "Speichern": {
-      "Empty": {
-        "msg": "Den Ablauf ist lerr! Bitte fuellen Sie den Ablauf aus bevor Sie ihn speichern.\nBei Problemen oeffnen Sie das Hilfemenu oder druecken Sie 'F1'",
-        "caption": "Leerer Ablauf!"
+    "Deutsch": {
+      "Speichern": {
+        "Empty": {
+          "msg": "Den Ablauf ist lerr! Bitte fuellen Sie den Ablauf aus bevor Sie ihn speichern.\nBei Problemen oeffnen Sie das Hilfemenu oder druecken Sie 'F1'",
+          "caption": "Leerer Ablauf!"
+        },
+        "NotSaved": {
+          "msg": "Ihr Ablauf ist nicht gespeichert! Moechsten Sie ihn speichern?",
+          "caption": "Ungespeicherte Aenderungen"
+        }
       },
-      "NotSaved": {
-        "msg": "Ihr Ablauf ist nicht gespeichert! Moechsten Sie ihn speichern?",
-        "caption": "Ungespeicherte Aenderungen"
+      "Form2": {
+        "endOfTable": "Sie haben das Ende des Ablaufs erreicht!"
+      },
+      "delay": {
+        "msg": "Sie haben ihren Ablauf spaeter gestartet als geplant. \nWollen sie den Ablauf um ihren Zeitverzug verschieben?",
+        "caption": "Zeitverzug festgestellt!"
       }
-    },
-    "Form2": {
-      "endOfTable": "Sie haben das Ende des Ablaufs erreicht!"
     }
-  }
-
 }
