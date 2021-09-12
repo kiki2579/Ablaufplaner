@@ -426,7 +426,9 @@ namespace JesusHouseAblaufplaner
             String[][] content = new String[table.RowCount][];
             DateTime date;
             TimeSpan timeSpan;
-            DateTime startDate;
+            DateTime startdate;
+            int tablehours, tableminutes;
+            double timeBefore;
 
             for (int i = 0; i < content.GetLength(0); i++)
             {
@@ -511,12 +513,60 @@ namespace JesusHouseAblaufplaner
             }
             else return;
 
+
+            Int32.TryParse(string.Concat(content[1][0][0], content[1][0][1]), out tablehours);//string1 + string2 - > int
+            Int32.TryParse(string.Concat(content[1][0][3], content[1][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
+
+            date = DateTime.Now;
+            Console.WriteLine($"Form1_Test_Clock: {tablehours}");
+            Console.WriteLine($"Form1_Test2_Clock: {date.Day.ToString()}");
+            if (tablehours == 0) // wenn 0:00 dann Nächter Tag
+            {
+                date = date.AddDays(1);
+            }
+            Console.WriteLine($"Form1_Test3_Clock: {date.Day.ToString()}");
+            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, 0);
+            date = DateTime.Now;
+            timeSpan = startdate - date;
+            Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
+            timeBefore = timeSpan.TotalMilliseconds;
+            wait(5);
+            date = DateTime.Now;
+            timeSpan = startdate - date;
+            Console.WriteLine($"TestZeit: {timeBefore}");
+            Console.WriteLine($"TestZeit2: {timeSpan.TotalMilliseconds}");
+            Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
+            if (timeBefore > timeSpan.TotalMilliseconds) Console.WriteLine("Zeitanpassung!");
+
             Console.WriteLine(table_lines);
             Form2 Form2 = new Form2(table_lines, content, table.RowCount);
             Form2.Visible = true;
 
             Form2.Activate();
             Form2.Enabled = true;
+        }
+
+        public void wait(int milliseconds) //Anstatt wie bei System.Threading.Thread.Sleep() wird das UI nicht angehalten
+        {
+            var timerForm = new System.Windows.Forms.Timer();
+            if (milliseconds == 0 || milliseconds < 0) return;
+
+            // Console.WriteLine("start wait timer");
+            timerForm.Interval = milliseconds;
+            timerForm.Enabled = true;
+            timerForm.Start();
+
+            timerForm.Tick += (s, e) =>
+            {
+                timerForm.Enabled = false;
+                timerForm.Stop();
+                // Console.WriteLine("stop wait timer");
+            };
+
+            while (timerForm.Enabled)
+            {
+                Application.DoEvents();
+            }
         }
 
         private void Form1_FormClosing(object sender, CancelEventArgs e)

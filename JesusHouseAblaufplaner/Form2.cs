@@ -139,13 +139,13 @@ namespace JesusHouseAblaufplaner
             Int32.TryParse(string.Concat(table[prespoint+1][0][0], table[prespoint+1][0][1]), out tablehours);//string1 + string2 - > int
             Int32.TryParse(string.Concat(table[prespoint+1][0][3], table[prespoint+1][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
             date = DateTime.Now;
-            Console.WriteLine($"Test: {tablehours}");
-            Console.WriteLine($"Test2: {date.Day.ToString()}");
-            if (tablehours == 0)
+            Console.WriteLine($"Test_Clock: {tablehours}");
+            Console.WriteLine($"Test2_Clock: {date.Day.ToString()}");
+            if (tablehours == 0) // wenn 0:00 dann Nächter Tag
             {
                 date = date.AddDays(1);
             }
-            Console.WriteLine($"Test2: {date.Day.ToString()}");
+            Console.WriteLine($"Test3_Clock: {date.Day.ToString()}");
             startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, 0);            
             date = DateTime.Now;
             timeSpan = startdate - date;
