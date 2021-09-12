@@ -111,26 +111,29 @@ namespace JesusHouseAblaufplaner
                 style.Height = 70;
             }
 
-            for (int i = 0; i < lines; i ++)
+            for (int i = 0; i < lines-1; i ++)
             {                
-                //tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-                //tableLayoutPanel1.RowCount++;
+                
+                  //tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+                  //tableLayoutPanel1.RowCount++;
 
-                Console.WriteLine(table[i][2] + " : " + lines);
-                Label label = new Label();
-                label.Name = "next" + Convert.ToString(i);
-                label.Dock = DockStyle.Fill;
-                label.TextAlign = ContentAlignment.MiddleCenter;
-                label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
-                label.Font = new Font("Arial", 11);
-                Console.WriteLine(label.Text);
-                TableLayoutControlCollection controls = tableLayoutPanel1.Controls;
-                controls.Add(label);
-                Console.WriteLine(table[i][2] + " : " + lines);
-                /*Label label1 = new Label();
-                label1.Name = "placeholder" + Convert.ToString(i);
-                label1.Dock = DockStyle.Fill;
-                controls.Add(label1);*/
+                    Console.WriteLine(table[i][2] + " : " + lines);
+                    Label label = new Label();
+                    label.Name = "next" + Convert.ToString(i);
+                    label.Dock = DockStyle.Fill;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
+                    label.Font = new Font("Arial", 11);
+                    Console.WriteLine(label.Text);
+                    TableLayoutControlCollection controls = tableLayoutPanel1.Controls;
+                    controls.Add(label);
+                    Console.WriteLine(table[i][2] + " : " + lines);
+                    /*Label label1 = new Label();
+                    label1.Name = "placeholder" + Convert.ToString(i);
+                    label1.Dock = DockStyle.Fill;
+                    controls.Add(label1);*/
+                
+
             }
             label3.Text = table[prespoint][1];
             Int32.TryParse(string.Concat(table[prespoint+1][0][0], table[prespoint+1][0][1]), out tablehours);//string1 + string2 - > int
@@ -174,7 +177,7 @@ namespace JesusHouseAblaufplaner
                 label.Name = "next" + Convert.ToString(i - 1);
                 label.Dock = DockStyle.Fill;
                 label.TextAlign = ContentAlignment.MiddleCenter;
-                if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
+                if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + i][1]}\nWer: {table[prespoint + i][2]}\nUm: {table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
                 label.Font = new Font("Arial", 11);
                 Console.WriteLine(label.Text);
                 TableLayoutControlCollection controls = tableLayoutPanel1.Controls;
