@@ -493,7 +493,7 @@ namespace JesusHouseAblaufplaner
                         }
                         catch
                         {
-
+                            break;
                         }
                         
                 
@@ -545,7 +545,7 @@ namespace JesusHouseAblaufplaner
                     return;
                 }else if (result == DialogResult.Yes){
 
-                    for (int i = 0; i <= content.Length-1; i++)
+                    for (int i = 0; i <= content.Length; i++)
                     {
                         try
                         {
@@ -569,7 +569,7 @@ namespace JesusHouseAblaufplaner
                         }
                         catch
                         {
-
+                            break;
                         }
 
                     }
