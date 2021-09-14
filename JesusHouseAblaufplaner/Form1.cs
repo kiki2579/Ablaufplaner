@@ -493,7 +493,7 @@ namespace JesusHouseAblaufplaner
                         }
                         catch
                         {
-
+                            break;
                         }
                         
                 
@@ -514,11 +514,11 @@ namespace JesusHouseAblaufplaner
             else return;
 
 
-            Int32.TryParse(string.Concat(content[1][0][0], content[1][0][1]), out tablehours);//string1 + string2 - > int
-            Int32.TryParse(string.Concat(content[1][0][3], content[1][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
+            Int32.TryParse(string.Concat(content[0][0][0], content[0][0][1]), out tablehours);//string1 + string2 - > int
+            Int32.TryParse(string.Concat(content[0][0][3], content[0][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
 
             date = DateTime.Now;
-            Console.WriteLine($"Form1_Test_Clock: {tablehours}");
+            Console.WriteLine($"Form1_Test_Clock: {tableminutes}");
             Console.WriteLine($"Form1_Test2_Clock: {date.Day.ToString()}");
             if (tablehours == 0) // wenn 0:00 dann Nächter Tag
             {
@@ -536,7 +536,45 @@ namespace JesusHouseAblaufplaner
             Console.WriteLine($"TestZeit: {timeBefore}");
             Console.WriteLine($"TestZeit2: {timeSpan.TotalMilliseconds}");
             Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
-            if (timeBefore > timeSpan.TotalMilliseconds) Console.WriteLine("Zeitanpassung!");
+            if (timeBefore > timeSpan.TotalMilliseconds)
+            {
+                DialogResult result;
+                result = MessageBox.Show(language.Deutsch.delay.msg, language.Deutsch.delay.caption, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }else if (result == DialogResult.Yes){
+
+                    for (int i = 0; i <= content.Length; i++)
+                    {
+                        try
+                        {
+                            Int32.TryParse(string.Concat(content[i][0][0], content[i][0][1]), out tablehours);//string1 + string2 - > int
+                            Int32.TryParse(string.Concat(content[i][0][3], content[i][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
+                                                        
+                            Console.WriteLine($"Form12_Test_Clock: {tablehours}");
+                            Console.WriteLine($"Form12_Test2_Clock: {date.Hour.ToString()}");
+                            if (tablehours == 0) // wenn 0:00 dann Nächter Tag
+                            {
+                                date = date.AddDays(1);
+                            }
+                            Console.WriteLine($"Form12_Test3_Clock: {date.Day.ToString()}");
+                            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, 0);                       
+                            Console.WriteLine("StartTest: " + startdate.ToString(@"HH\:mm\:ss"));
+                            startdate -= timeSpan;
+                            Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
+                            Console.WriteLine(startdate.ToString(@"HH\:mm\:ss"));
+                            content[i][0] = startdate.ToString(@"HH\:mm");
+                            Console.WriteLine(content[i][0]);
+                        }
+                        catch
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            }
 
             Console.WriteLine(table_lines);
             Form2 Form2 = new Form2(table_lines, content, table.RowCount);

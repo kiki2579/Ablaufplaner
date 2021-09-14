@@ -28,6 +28,8 @@ namespace JesusHouseAblaufplaner
         {
             public save Save { get; set; }
             public form__2 Form2 { get; set; }
+            public timedelay delay { get; set; }
+
             public class save
             {
                 public empty Empty { get; set; }
@@ -47,12 +49,18 @@ namespace JesusHouseAblaufplaner
             {
                 public string endOfTable { get; set; }
             }
+            public class timedelay
+            {
+                public string msg { get; set; }
+                public string caption { get; set; }
+            }
         }
 
         public class DE
         {
             public save Speichern { get; set; }
             public form__2 Form2 { get; set; }
+            public timedelay delay { get; set; }
             public class save
             {
                 public empty Empty { get; set; }
@@ -69,8 +77,13 @@ namespace JesusHouseAblaufplaner
                 }                
             }
             public class form__2
+            {     
+                public string endOfTable { get; set; }                
+            }
+            public class timedelay
             {
-                public string endOfTable { get; set; }
+                public string msg { get; set; }
+                public string caption { get; set; }
             }
         }
     }
