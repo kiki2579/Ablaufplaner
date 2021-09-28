@@ -123,7 +123,7 @@ namespace JesusHouseAblaufplaner
                     label.Dock = DockStyle.Fill;
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
-                    label.Font = new Font("Arial", 11);
+                    label.Font = new Font("Arial", 22);
                     Console.WriteLine(label.Text);
                     TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
                     controls.Add(label);
@@ -180,7 +180,7 @@ namespace JesusHouseAblaufplaner
                 label.Dock = DockStyle.Fill;
                 label.TextAlign = ContentAlignment.MiddleCenter;
                 if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + i][1]}\nWer: {table[prespoint + i][2]}\nUm: {table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
-                label.Font = new Font("Arial", 11);
+                label.Font = new Font("Arial", 22);
                 Console.WriteLine(label.Text);
                 TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
                 controls.Add(label);
@@ -222,6 +222,10 @@ namespace JesusHouseAblaufplaner
             timer1.Enabled = true;
             label4.Text = table[prespoint][2];
             label5.Text = table[prespoint][3];
+            if(fullscreen == true)
+            {
+                label8.Font = new Font("Microsoft Sans Serif", this.Size.Width / 15);
+            }
         }
         
 
@@ -243,6 +247,15 @@ namespace JesusHouseAblaufplaner
                 fullscreen = true;
                 tableLayoutPanel1.Height = this.Size.Height;
                 tableLayoutPanel1.Width = this.Size.Width;
+                TableLayoutRowStyleCollection styles = tableLayoutPanel3.RowStyles;
+                foreach (RowStyle style in styles)
+                {
+                    // Set the row height to 20 pixels.
+                    style.SizeType = SizeType.Absolute;
+                    style.Height = 140;
+        
+                }
+           
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -250,6 +263,14 @@ namespace JesusHouseAblaufplaner
                 formState.Restore(this);
                 this.WindowState = System.Windows.Forms.FormWindowState.Normal;
                 fullscreen = false;
+                TableLayoutRowStyleCollection styles = tableLayoutPanel3.RowStyles;
+                foreach (RowStyle style in styles)
+                {
+                    // Set the row height to 20 pixels.
+                    style.SizeType = SizeType.Absolute;
+                    style.Height = 70;
+
+                }
             }
             else if (e.KeyCode == Keys.Left)
             {
@@ -306,7 +327,8 @@ namespace JesusHouseAblaufplaner
             label5.Font = new Font("Microsoft Sans Serif", this.Size.Width / 30);
             label7.Font = new Font("Microsoft Sans Serif", this.Size.Width / 35, FontStyle.Underline);
             label8.Font = new Font("Microsoft Sans Serif", this.Size.Width / 15);
-
+          
+      
             /*for (int i = 0; i <= lines; i++)
             {
                 Control label = tableLayoutPanel1.Controls.Find("next" + Convert.ToString(i), false).First() as Label;
