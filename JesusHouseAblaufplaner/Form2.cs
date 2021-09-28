@@ -123,7 +123,14 @@ namespace JesusHouseAblaufplaner
                     label.Dock = DockStyle.Fill;
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     label.Text = $"Was: {table[prespoint + 1 + i][1]}\nWer: {table[prespoint + 1 + i][2]}\nUm: {table[prespoint + 1 + i][0]}\n({table[prespoint + 1 + i][3]})\n";
+                    if (fullscreen == true)
+                    {
                     label.Font = new Font("Arial", 22);
+                    }
+                    if (fullscreen == false)
+                    {
+                    label.Font = new Font("Arial", 11);
+                    }
                     Console.WriteLine(label.Text);
                     TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
                     controls.Add(label);
@@ -180,7 +187,14 @@ namespace JesusHouseAblaufplaner
                 label.Dock = DockStyle.Fill;
                 label.TextAlign = ContentAlignment.MiddleCenter;
                 if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + i][1]}\nWer: {table[prespoint + i][2]}\nUm: {table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
-                label.Font = new Font("Arial", 22);
+                if (fullscreen == true)
+                {
+                    label.Font = new Font("Arial", 22);
+                }
+                if (fullscreen == false)
+                {
+                    label.Font = new Font("Arial", 11);
+                }
                 Console.WriteLine(label.Text);
                 TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
                 controls.Add(label);
@@ -255,7 +269,37 @@ namespace JesusHouseAblaufplaner
                     style.Height = 140;
         
                 }
-           
+                for (int i = 0; i < tableLayoutPanel3.RowCount; i++)
+                {
+                    tableLayoutPanel3.Controls.RemoveByKey("next" + Convert.ToString(i));
+                    tableLayoutPanel3.Controls.RemoveByKey("placeholder" + Convert.ToString(i));
+                }
+                for (int i = 1; i < lines; i++)
+                {
+                    //tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+                    //tableLayoutPanel1.RowCount++;
+
+                    Console.WriteLine(table[prespoint + i][2] + " : " + lines);
+                    Label label = new Label();
+                    label.Name = "next" + Convert.ToString(i - 1);
+                    label.Dock = DockStyle.Fill;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + i][1]}\nWer: {table[prespoint + i][2]}\nUm: {table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
+                    if (fullscreen == true)
+                    {
+                        label.Font = new Font("Arial", 22);
+                    }
+                    if (fullscreen == false)
+                    {
+                        label.Font = new Font("Arial", 11);
+                    }
+                    Console.WriteLine(label.Text);
+                    TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
+                    controls.Add(label);
+                    Console.WriteLine(table[prespoint + i][2] + " : " + lines);
+               
+                }
+
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -270,6 +314,36 @@ namespace JesusHouseAblaufplaner
                     style.SizeType = SizeType.Absolute;
                     style.Height = 70;
 
+                }
+                for (int i = 0; i < tableLayoutPanel3.RowCount; i++)
+                {
+                    tableLayoutPanel3.Controls.RemoveByKey("next" + Convert.ToString(i));
+                    tableLayoutPanel3.Controls.RemoveByKey("placeholder" + Convert.ToString(i));
+                }
+                for (int i = 1; i < lines; i++)
+                {
+                    //tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+                    //tableLayoutPanel1.RowCount++;
+
+                    Console.WriteLine(table[prespoint + i][2] + " : " + lines);
+                    Label label = new Label();
+                    label.Name = "next" + Convert.ToString(i - 1);
+                    label.Dock = DockStyle.Fill;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    if (table[prespoint + i][1] != null) label.Text = $"Was: {table[prespoint + i][1]}\nWer: {table[prespoint + i][2]}\nUm: {table[prespoint + i][0]}\n({table[prespoint + i][3]})\n{label.Name}";
+                    if (fullscreen == true)
+                    {
+                        label.Font = new Font("Arial", 22);
+                    }
+                    if (fullscreen == false)
+                    {
+                        label.Font = new Font("Arial", 11);
+                    }
+                    Console.WriteLine(label.Text);
+                    TableLayoutControlCollection controls = tableLayoutPanel3.Controls;
+                    controls.Add(label);
+                    Console.WriteLine(table[prespoint + i][2] + " : " + lines);
+               
                 }
             }
             else if (e.KeyCode == Keys.Left)
