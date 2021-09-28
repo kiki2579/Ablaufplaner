@@ -153,7 +153,7 @@ namespace JesusHouseAblaufplaner
                 date = date.AddDays(1);
             }
             Console.WriteLine($"Test3_Clock: {date.Day.ToString()}");
-            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, 0);            
+            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, Convert.ToInt32(date.ToString("ss")));            
             date = DateTime.Now;
             timeSpan = startdate - date;
             overtime_indikator = timeSpan.TotalSeconds * 0.1;
@@ -227,7 +227,7 @@ namespace JesusHouseAblaufplaner
             {
                 date = date.AddDays(1);
             }
-            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, 0);
+            startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, Convert.ToInt32(date.ToString("ss")));
             date = DateTime.Now;
             if (hoch) startdate.Add(timeSpan);
             else startdate.Subtract(timeSpan);
@@ -364,14 +364,45 @@ namespace JesusHouseAblaufplaner
                 {
                     prespoint++;
                 }
+
+                timerCalc(DateTime.Now, false, 0, 0, 0, 0, timeSpan, DateTime.Now);
+                
                 Reload();
-                for (int i = 0; i <= lines; i++)
-                {
-                    //Control label = tableLayoutPanel1.Controls.Find("next" + i.ToString(), false).First() as Label;
-                }
             }
 
 
+        }
+
+        private void timerCalc(DateTime date, bool hoch, int tablehours, int tableminutes, double timeBefore, double overtime_indikator, TimeSpan timeSpan, DateTime startDate)
+        {
+            for (int i = prespoint; i <= table.Length; i++)
+            {
+                try
+                {
+                    Int32.TryParse(string.Concat(table[i][0][0], table[i][0][1]), out tablehours);//string1 + string2 - > int
+                    Int32.TryParse(string.Concat(table[i][0][3], table[i][0][4]), out tableminutes);// prespoin +1 weil wir uns auf die verbleibende zeit beziehen. also auf die startzeit des nächsten
+
+                    Console.WriteLine($"Form2_Test_Clock: {tablehours}");
+                    Console.WriteLine($"Form2_Test2_Clock: {date.Hour.ToString()}");
+                    if (tablehours == 0) // wenn 0:00 dann Nächter Tag
+                    {
+                        date = date.AddDays(1);
+                    }
+                    Console.WriteLine($"Form2_Test3_Clock: {date.Day.ToString()}");
+                    startDate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, Convert.ToInt32(date.ToString("ss")));
+                    Console.WriteLine("StartTest: " + startDate.ToString(@"HH\:mm\:ss"));
+                    startDate -= timeSpan;
+                    Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
+                    Console.WriteLine(startDate.ToString(@"HH\:mm\:ss"));
+                    table[i][0] = startDate.ToString(@"HH\:mm");
+                    Console.WriteLine(table[i][0]);
+                }
+                catch
+                {
+                    break;
+                }
+                //Control label = tableLayoutPanel1.Controls.Find("next" + i.ToString(), false).First() as Label;
+            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
