@@ -15,7 +15,7 @@ namespace JesusHouseAblaufplaner
     public partial class Form2 : Form
     {
 
-        public int lines = 0;
+        public int lines = 0, rows = 0;
         public int prespoint = 0;
         public String[][] table;
 
@@ -26,8 +26,10 @@ namespace JesusHouseAblaufplaner
         public double timeBefore;
         public double overtime_indikator;
         public bool hoch = false;
-        public TimeSpan timeSpan;
-        DateTime startdate;
+        public TimeSpan timeSpan, statsTimeSpan;
+        DateTime startdate, statsStart;
+
+        public Dictionary<String, TimeSpan> stats = new Dictionary<String, TimeSpan>();
 
         public dynamic language;
 
@@ -68,6 +70,7 @@ namespace JesusHouseAblaufplaner
                 table[i] = new String[4];
             }
             lines = fm1_lines;
+            rows = fm1_table_row;
             table = fm1table;
         }
 
@@ -155,6 +158,7 @@ namespace JesusHouseAblaufplaner
             Console.WriteLine($"Test3_Clock: {date.Day.ToString()}");
             startdate = new DateTime(Convert.ToInt32(date.ToString("yyyy")), Convert.ToInt32(date.ToString("MM")), Convert.ToInt32(date.ToString("dd")), tablehours, tableminutes, Convert.ToInt32(date.ToString("ss")));            
             date = DateTime.Now;
+            statsStart = date; //Init Stats start time. Later for calculation of timespan for chart in Form 4
             timeSpan = startdate - date;
             overtime_indikator = timeSpan.TotalSeconds * 0.1;
             Console.WriteLine(timeSpan.ToString(@"hh\:mm\:ss"));
@@ -219,6 +223,10 @@ namespace JesusHouseAblaufplaner
                 label4.Text = table[prespoint][2];
                 label8.ForeColor = Color.White;
                 timer1.Enabled = false;
+
+                statsTimeSpan = statsStart - DateTime.Now;
+
+                label5.Text = "Benötigte Zeit: " + statsTimeSpan.ToString(@"hh\:mm\:ss");
                 return;
             }
             label5.Text = table[prespoint][3];
@@ -360,6 +368,13 @@ namespace JesusHouseAblaufplaner
             }
             else if (e.KeyCode == Keys.Right)
             {
+
+                //statsTimeSpan = statsStart - DateTime.Now;
+
+                //stats.Add(table[prespoint][1], statsTimeSpan);
+
+
+
                 if (table[prespoint+1][1] != null)
                 {
                     prespoint++;
@@ -371,6 +386,15 @@ namespace JesusHouseAblaufplaner
             }
 
 
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*Statistic.Form4 fm4 = new Statistic.Form4(table, rows, stats);
+
+            fm4.Visible = true;
+            fm4.Enabled = true;
+            fm4.Activate();*/
         }
 
         private void timerCalc(DateTime date, bool hoch, int tablehours, int tableminutes, double timeBefore, double overtime_indikator, TimeSpan timeSpan, DateTime startDate)

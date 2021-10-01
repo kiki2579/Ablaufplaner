@@ -19,8 +19,6 @@ namespace JesusHouseAblaufplaner
         public Form1()
         {
             InitializeComponent();
-
-            
         }
 
 

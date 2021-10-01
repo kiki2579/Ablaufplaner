@@ -61,4 +61,4 @@ C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debu
 C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\JesusHouseAblaufplaner.csproj.CopyComplete
 C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.exe
 C:\Users\Timo Lukowski\source\repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.pdb
-C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Ablaufplaner.Form4.resources
+C:\Users\fefe3\Source\Repos\Ablaufplaner\JesusHouseAblaufplaner\obj\Debug\Statistic.Form4.resources
